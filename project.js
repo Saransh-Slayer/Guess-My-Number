@@ -9,6 +9,10 @@ const displayMessage = function (message) {
 
 const execution = function () {
   const guess = Number(document.querySelector('.guess').value);
+  if (guess > 20 || guess < 1) {
+    displayMessage('Invalid input!');
+    execution();
+  }
   if (!guess) {
     displayMessage('No Number!');
   } else if (guess === secNumber) {
